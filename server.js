@@ -23,6 +23,21 @@ app.get('/location', (request, response) => {
     errorHandler(error, request, response);
   }
 });
+
+app.get('/weather', (request,response) => { 
+    const weatherData = searchToWeather(request.query.data);
+    response.send(weatherData);
+  });
+  
+  function searchToWeather(query) {
+    const weatherData = require('./data/darksky.json');
+    const weatherArr = [];
+    let weather = new Weather (weatherData.daily);
+    weather.search_query = query;
+    weatherArr.push(weather);
+    return weatherArr;
+  }
+
 app.use('*', notFoundHandler);
 function Location(city, geoData) {
   this.search_query = city;
@@ -30,6 +45,13 @@ function Location(city, geoData) {
   this.latitude = geoData[0].lat;
   this.longitude = geoData[0].lon;
 }
+
+function Weather(weatherData) {
+    this.forecast = weatherData.summary;
+    this.time = new Date(weatherData.data[0].time * 1000).toDateString();
+  }
+
+
 function notFoundHandler(request, response) {
   response.status(404).send('NOT FOUND!!');
 }
