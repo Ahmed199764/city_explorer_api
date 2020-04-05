@@ -1,0 +1,26 @@
+{
+  "name": "city_explorer_api",
+  "version": "1.0.0",
+  "description": "### City Explorer Number and name of feature | Estimate of time needed to complete | Start time | Finish time | Actual time ---------------------------|-------------------------------------|------------|-------------|------------ Feature #1: Repositry Set Up | 30min | 3pm | 3:45min | 45min Feature #2: Location  | 2h | 4pm | ? | ? Feature #3: Weather | ? | ? | ? | ? Feature #4: Erros | ? | ? | ? | ?",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahmed199764/city_explorer_api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ahmed199764/city_explorer_api/issues"
+  },
+  "homepage": "https://github.com/Ahmed199764/city_explorer_api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
